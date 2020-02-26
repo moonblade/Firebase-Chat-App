@@ -8,6 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'chat';
   constructor() {
-    console.log('main app 2');
   }
 }

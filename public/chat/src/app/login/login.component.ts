@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'angularx-social-login';
-import { GoogleLoginProvider } from 'angularx-social-login';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -9,14 +9,13 @@ import { GoogleLoginProvider } from 'angularx-social-login';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private loginService: LoginService) { }
 
   ngOnInit() {
-    this.signInWithGoogle();
   }
 
-  signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  loginWithGoogle(): void {
+    this.loginService.loginWithGoogle();
   }
 
   signOut(): void {

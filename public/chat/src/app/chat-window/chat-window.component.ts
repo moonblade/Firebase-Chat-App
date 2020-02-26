@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-chat-window',
@@ -8,9 +9,10 @@ import { LoginComponent } from '../login/login.component';
 })
 export class ChatWindowComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
+    this.loginService.checkLogin();
   }
 
 }
