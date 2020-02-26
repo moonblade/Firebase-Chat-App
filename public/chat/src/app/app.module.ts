@@ -11,6 +11,7 @@ import { GoogleLoginProvider } from 'angularx-social-login';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { ProfileComponent } from './profile/profile.component';
 
 const googleLoginOptions: LoginOpt = {
   scope: 'profile email',
@@ -33,7 +34,8 @@ export function provideConfig() {
     AppComponent,
     ChatWindowComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
