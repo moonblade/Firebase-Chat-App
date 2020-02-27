@@ -8,8 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SocialLoginModule, AuthServiceConfig, LoginOpt } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { ProfileComponent } from './profile/profile.component';
 
@@ -50,7 +49,7 @@ export function provideConfig() {
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
-    library.add(faGoogle);
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faGoogle);
   }
 }
