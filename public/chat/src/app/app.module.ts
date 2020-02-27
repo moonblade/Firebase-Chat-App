@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ChatWindowComponent } from './chat-window/chat-window.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
+import { SocialLoginModule, AuthServiceConfig, LoginOpt } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
