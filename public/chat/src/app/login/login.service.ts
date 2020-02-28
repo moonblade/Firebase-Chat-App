@@ -6,7 +6,6 @@ import { AuthService, GoogleLoginProvider, SocialUser } from 'angularx-social-lo
   providedIn: 'root'
 })
 export class LoginService {
-
   constructor(private router: Router, private authService: AuthService) {
     this.subscibeLogin();
   }
@@ -25,12 +24,19 @@ export class LoginService {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
+  logout() {
+    this.authService.signOut();
+  }
+
   subscibeLogin() {
     this.authService.authState.subscribe((user) => {
       const loggedIn = (user != null);
       if (loggedIn) {
         localStorage.setItem('loggedInUser', JSON.stringify(user));
         this.router.navigate(['chat']);
+      } else {
+        localStorage.removeItem('loggedInUser');
+        this.router.navigate(['login']);
       }
     });
   }

@@ -16,4 +16,7 @@ export class ProfileComponent implements OnInit {
     this.user = this.loginService.getLoggedInUser();
   }
 
+  logout() {
+    this.loginService.logout();
+  }
 }

@@ -1,1 +1,4 @@
-<div [textContent]="user.name"></div>
+<span mat-button [matMenuTriggerFor]="menu" [textContent]="user.name"></span>
+<mat-menu #menu="matMenu">
+  <span mat-menu-item (click)="logout()">Logout</span>
+</mat-menu>
