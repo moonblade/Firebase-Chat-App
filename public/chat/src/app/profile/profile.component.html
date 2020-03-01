@@ -1,4 +1,4 @@
-<span mat-button [matMenuTriggerFor]="menu" [textContent]="user.name"></span>
+<button mat-flat-button color="primary" [matMenuTriggerFor]="menu" [textContent]="user.name"></button>
 <mat-menu #menu="matMenu">
   <span mat-menu-item (click)="logout()">Logout</span>
 </mat-menu>

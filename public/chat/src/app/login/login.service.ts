@@ -33,7 +33,7 @@ export class LoginService {
       const loggedIn = (user != null);
       if (loggedIn) {
         localStorage.setItem('loggedInUser', JSON.stringify(user));
-        this.router.navigate(['chat']);
+        this.router.navigate(['main']);
       } else {
         localStorage.removeItem('loggedInUser');
         this.router.navigate(['login']);

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginComponent } from '../login/login.component';
 import { LoginService } from '../login/login.service';
 
 @Component({
@@ -7,7 +6,7 @@ import { LoginService } from '../login/login.service';
   templateUrl: './chat-window.component.html',
   styleUrls: ['./chat-window.component.scss']
 })
-export class ChatWindowComponent implements OnInit {
+export class MainWindowComponent implements OnInit {
 
   constructor(private loginService: LoginService) { }
 

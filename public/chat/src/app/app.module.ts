@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ChatWindowComponent } from './chat-window/chat-window.component';
+import { MainWindowComponent } from './chat-window/chat-window.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SocialLoginModule, AuthServiceConfig, LoginOpt } from 'angularx-social-login';
@@ -14,6 +14,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatRippleModule} from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 const googleLoginOptions: LoginOpt = {
   scope: 'profile email',
@@ -34,7 +37,7 @@ export function provideConfig() {
 @NgModule({
   declarations: [
     AppComponent,
-    ChatWindowComponent,
+    MainWindowComponent,
     LoginComponent,
     NavbarComponent,
     ProfileComponent
@@ -46,7 +49,10 @@ export function provideConfig() {
     FontAwesomeModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatRippleModule,
+    MatButtonModule,
+    MatSidenavModule
   ],
   providers: [{
     provide: AuthServiceConfig,

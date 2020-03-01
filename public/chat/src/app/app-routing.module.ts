@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ChatWindowComponent } from './chat-window/chat-window.component';
+import { MainWindowComponent } from './chat-window/chat-window.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [{
-  'path': 'chat',
-  'component': ChatWindowComponent
+  'path': 'main',
+  'component': MainWindowComponent
 }, {
   path: '',
-  redirectTo: '/chat',
+  redirectTo: '/main',
   pathMatch: 'full'
 }, {
   'path': 'login',
