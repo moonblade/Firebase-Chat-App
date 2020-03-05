@@ -11,12 +11,7 @@ import { GoogleLoginProvider } from 'angularx-social-login';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { ProfileComponent } from './profile/profile.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatRippleModule} from '@angular/material/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MaterialModule } from './material.module';
 
 const googleLoginOptions: LoginOpt = {
   scope: 'profile email',
@@ -47,12 +42,7 @@ export function provideConfig() {
     AppRoutingModule,
     SocialLoginModule,
     FontAwesomeModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatRippleModule,
-    MatButtonModule,
-    MatSidenavModule
+    MaterialModule
   ],
   providers: [{
     provide: AuthServiceConfig,

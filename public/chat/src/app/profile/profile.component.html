@@ -1,4 +1,7 @@
-<button mat-flat-button color="primary" [matMenuTriggerFor]="menu" [textContent]="user.name"></button>
+<!-- <a mat-button [matMenuTriggerFor]="menu">{{user.name}}</a> -->
+<button class="logoutButton" [matMenuTriggerFor]="menu" mat-icon-button color="accent" [style.backgroundImage]="'url(' + user.photoUrl + ')'"> 
+    
+</button>
 <mat-menu #menu="matMenu">
   <span mat-menu-item (click)="logout()">Logout</span>
 </mat-menu>
