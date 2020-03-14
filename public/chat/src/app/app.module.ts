@@ -12,6 +12,8 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { ProfileComponent } from './profile/profile.component';
 import { MaterialModule } from './material.module';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { TextWindowComponent } from './text-window/text-window.component';
 
 const googleLoginOptions: LoginOpt = {
   scope: 'profile email',
@@ -35,7 +37,9 @@ export function provideConfig() {
     MainWindowComponent,
     LoginComponent,
     NavbarComponent,
-    ProfileComponent
+    ProfileComponent,
+    SideNavComponent,
+    TextWindowComponent
   ],
   imports: [
     BrowserModule,
