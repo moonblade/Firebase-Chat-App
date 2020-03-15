@@ -14,6 +14,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { MaterialModule } from './material.module';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { TextWindowComponent } from './text-window/text-window.component';
+import { TextListComponent } from './text-list/text-list.component';
+import { TextInputComponent } from './text-input/text-input.component';
+import { FormsModule } from '@angular/forms';
 
 const googleLoginOptions: LoginOpt = {
   scope: 'profile email',
@@ -39,14 +42,17 @@ export function provideConfig() {
     NavbarComponent,
     ProfileComponent,
     SideNavComponent,
-    TextWindowComponent
+    TextWindowComponent,
+    TextListComponent,
+    TextInputComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SocialLoginModule,
     FontAwesomeModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [{
     provide: AuthServiceConfig,
