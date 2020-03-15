@@ -12,7 +12,7 @@ export class TextInputComponent implements OnInit {
   ngOnInit(): void {
     this.clearInput();
   }
-  
+
   clearInput() {
     this.input = '';
   }
