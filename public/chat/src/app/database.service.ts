@@ -1,21 +1,34 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import 'firebase/database';
+import { Message } from './message';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DatabaseService {
 
-  item: Observable<any>;
+  items: Object;
+  db: AngularFireDatabase;
   constructor(db: AngularFireDatabase) {
-    this.item = db.object('chat').valueChanges();
-    console.log(this.item);
-    this.item.subscribe(this.subscription);
+    this.db = db;
+    this.items = {};
+    this.subscribe('channel');
   }
 
-  subscription(event: Event) {
-    console.log(event);
+  subscribe(channel: string) {
+    const item = this.db.list<Message>(channel);
+    return item.valueChanges().subscribe((value) => this.subscription(value, channel));
+  }
+
+  send(channel: string, text: string) {
+    const item = this.db.list<Message>(channel);
+    item.push(new Message(text).toJson());
+  }
+
+  subscription(value: any, channel: string) {
+    console.log(value);
+    console.log(channel);
   }
 }

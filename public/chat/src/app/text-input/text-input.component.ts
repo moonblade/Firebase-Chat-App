@@ -7,8 +7,11 @@ import { DatabaseService } from '../database.service';
   styleUrls: ['./text-input.component.scss']
 })
 export class TextInputComponent implements OnInit {
-  public input: String;
-  constructor(db: DatabaseService) { }
+  public input: string;
+  private db: DatabaseService;
+  constructor(db: DatabaseService) {
+    this.db = db;
+  }
 
   ngOnInit(): void {
     this.clearInput();
@@ -19,7 +22,7 @@ export class TextInputComponent implements OnInit {
   }
 
   send(): void {
-    console.log(this.input);
+    this.db.send('channel', this.input);
     this.clearInput();
   }
 
