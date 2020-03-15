@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import {Router} from '@angular/router';
-import { AuthService, GoogleLoginProvider, SocialUser } from 'angularx-social-login';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  constructor(private router: Router, private authService: AuthService) {
+  constructor(private router: Router, private authService: AngularFireAuth) {
     this.subscibeLogin();
   }
 
@@ -16,12 +17,12 @@ export class LoginService {
     }
   }
 
-  getLoggedInUser(): SocialUser {
+  getLoggedInUser() {
     return JSON.parse(localStorage.getItem('loggedInUser'));
   }
 
   loginWithGoogle() {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.authService.signInWithRedirect(new auth.GoogleAuthProvider());
   }
 
   logout() {
@@ -31,7 +32,7 @@ export class LoginService {
   subscibeLogin() {
     this.authService.authState.subscribe((user) => {
       const loggedIn = (user != null);
-      if (loggedIn) {
+      if (loggedIn && localStorage.getItem('loggedInUser') !== undefined) {
         localStorage.setItem('loggedInUser', JSON.stringify(user));
         this.router.navigate(['main']);
       } else {

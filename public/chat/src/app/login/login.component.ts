@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'angularx-social-login';
 import { LoginService } from './login.service';
 
 @Component({
@@ -9,7 +8,7 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private loginService: LoginService) { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
   }
@@ -19,7 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   signOut(): void {
-    this.authService.signOut();
+    this.loginService.logout();
   }
 
 

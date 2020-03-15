@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabaseService } from '../database.service';
 
 @Component({
   selector: 'app-text-input',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TextInputComponent implements OnInit {
   public input: String;
-  constructor() { }
+  constructor(db: DatabaseService) { }
 
   ngOnInit(): void {
     this.clearInput();
