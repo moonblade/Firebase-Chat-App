@@ -24,6 +24,7 @@ export class DatabaseService {
 
   send(channel: string, text: string) {
     const item = this.db.list<Message>(channel);
+    console.log(new Message(text).toJson());
     item.push(new Message(text).toJson());
   }
 

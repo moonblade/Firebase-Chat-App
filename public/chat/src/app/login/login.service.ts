@@ -18,7 +18,7 @@ export class LoginService {
   }
 
   getLoggedInUser() {
-    return JSON.parse(localStorage.getItem('loggedInUser'));
+    return getLoggedInUser();
   }
 
   loginWithGoogle() {
@@ -41,4 +41,8 @@ export class LoginService {
       }
     });
   }
+}
+
+export function getLoggedInUser() {
+  return JSON.parse(localStorage.getItem('loggedInUser'));
 }
